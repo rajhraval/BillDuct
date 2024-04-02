@@ -49,6 +49,10 @@
 		CF2AA8452BBC1D6400D5E77A /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8432BBC1D6400D5E77A /* Double+.swift */; };
 		CF2AA8482BBC1EBF00D5E77A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8472BBC1EBF00D5E77A /* HomeViewModel.swift */; };
 		CF2AA8492BBC1EBF00D5E77A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8472BBC1EBF00D5E77A /* HomeViewModel.swift */; };
+		CF2AA84C2BBC219B00D5E77A /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA84B2BBC219B00D5E77A /* AddProductView.swift */; };
+		CF2AA84D2BBC219B00D5E77A /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA84B2BBC219B00D5E77A /* AddProductView.swift */; };
+		CF2AA8502BBC21B300D5E77A /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA84F2BBC21B300D5E77A /* AddProductViewModel.swift */; };
+		CF2AA8512BBC21B300D5E77A /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA84F2BBC21B300D5E77A /* AddProductViewModel.swift */; };
 		CF38134A2B664AFA009AD64E /* BillDuctApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3813492B664AFA009AD64E /* BillDuctApp.swift */; };
 		CF38134C2B664AFA009AD64E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38134B2B664AFA009AD64E /* HomeView.swift */; };
 		CF38134E2B664AFB009AD64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF38134D2B664AFB009AD64E /* Assets.xcassets */; };
@@ -95,6 +99,8 @@
 		CF2AA8332BBC167B00D5E77A /* PlusJakartaSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		CF2AA8432BBC1D6400D5E77A /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 		CF2AA8472BBC1EBF00D5E77A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CF2AA84B2BBC219B00D5E77A /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
+		CF2AA84F2BBC21B300D5E77A /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
 		CF3813462B664AFA009AD64E /* BillDuct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillDuct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3813492B664AFA009AD64E /* BillDuctApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDuctApp.swift; sourceTree = "<group>"; };
 		CF38134B2B664AFA009AD64E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -197,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				CF2AA84A2BBC1EC200D5E77A /* Home */,
+				CF2AA84E2BBC219F00D5E77A /* Add Product */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -208,6 +215,15 @@
 				CF2AA8472BBC1EBF00D5E77A /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CF2AA84E2BBC219F00D5E77A /* Add Product */ = {
+			isa = PBXGroup;
+			children = (
+				CF2AA84B2BBC219B00D5E77A /* AddProductView.swift */,
+				CF2AA84F2BBC21B300D5E77A /* AddProductViewModel.swift */,
+			);
+			path = "Add Product";
 			sourceTree = "<group>";
 		};
 		CF38133D2B664AFA009AD64E = {
@@ -398,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF2AA84C2BBC219B00D5E77A /* AddProductView.swift in Sources */,
 				CF3813792B664D21009AD64E /* Constants.swift in Sources */,
 				CF2AA8482BBC1EBF00D5E77A /* HomeViewModel.swift in Sources */,
 				CF2AA8442BBC1D6400D5E77A /* Double+.swift in Sources */,
@@ -415,6 +432,7 @@
 				CF3813822B664D63009AD64E /* BillDuctModel.xcdatamodeld in Sources */,
 				CF3813712B664D06009AD64E /* CoreDataStack.swift in Sources */,
 				CF2AA8262BBBFDFC00D5E77A /* ProductEndpoint.swift in Sources */,
+				CF2AA8502BBC21B300D5E77A /* AddProductViewModel.swift in Sources */,
 				CF38137D2B664D21009AD64E /* Logger.swift in Sources */,
 				CF38134C2B664AFA009AD64E /* HomeView.swift in Sources */,
 				CF38134A2B664AFA009AD64E /* BillDuctApp.swift in Sources */,
@@ -427,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF2AA84D2BBC219B00D5E77A /* AddProductView.swift in Sources */,
 				CF38137A2B664D21009AD64E /* Constants.swift in Sources */,
 				CF2AA8492BBC1EBF00D5E77A /* HomeViewModel.swift in Sources */,
 				CF2AA8452BBC1D6400D5E77A /* Double+.swift in Sources */,
@@ -444,6 +463,7 @@
 				CF3813832B664D63009AD64E /* BillDuctModel.xcdatamodeld in Sources */,
 				CF3813722B664D06009AD64E /* CoreDataStack.swift in Sources */,
 				CF2AA8272BBBFDFC00D5E77A /* ProductEndpoint.swift in Sources */,
+				CF2AA8512BBC21B300D5E77A /* AddProductViewModel.swift in Sources */,
 				CF38137E2B664D21009AD64E /* Logger.swift in Sources */,
 				CF3813692B664BB1009AD64E /* BillDuctApp.swift in Sources */,
 				CF38136A2B664BB1009AD64E /* HomeView.swift in Sources */,

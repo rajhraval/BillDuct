@@ -20,10 +20,6 @@ extension MultiformData {
         "\r\n"
     }
 
-    var boundary: String {
-        UUID().uuidString
-    }
-
     var body: Data {
         var newData = data
         newData.append("--\(boundary)--")
@@ -31,7 +27,7 @@ extension MultiformData {
     }
 
     var header: [String: String] {
-        ["multipart/form-data; boundary=\(boundary)": "Content-Type"]
+        ["Content-Type": "multipart/form-data; boundary=\(boundary)"]
     }
 }
 
@@ -45,9 +41,12 @@ enum MimeType: String {
 }
 
 struct MultiformRequest: MultiformData {
+    
+    var boundary: String
     var data: Data
 
-    init(data: Data = Data()) {
+    init(boundary: String = UUID().uuidString, data: Data = Data()) {
+        self.boundary = boundary
         self.data = data
     }
 

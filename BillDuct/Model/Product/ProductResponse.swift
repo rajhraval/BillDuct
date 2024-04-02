@@ -14,7 +14,8 @@ struct ProductResponse: Identifiable, Codable {
     let success: Bool
 
     enum CodingKeys: String, CodingKey {
-        case id, message, success
+        case id = "product_id"
+        case message, success
         case product = "product_details"
     }
 }
