@@ -24,7 +24,6 @@ extension API {
         }
 
         guard let url = urlComponents.url else {
-            print("Failed to construct final URL.")
             throw APIError.invalidURLError
         }
 
