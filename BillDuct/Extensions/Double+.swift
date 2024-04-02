@@ -9,8 +9,9 @@ import Foundation
 
 extension Double {
 
+    /// Returns upto two decimals
     var toString: String {
-        return "\(self)"
+        return String(format: "%.2f", self)
     }
 
 }

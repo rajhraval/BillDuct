@@ -11,15 +11,51 @@ struct AddProductView: View {
 
     @StateObject private var viewModel = AddProductViewModel()
 
+    @State private var showPhotoPicker = false
+
     var body: some View {
         NavigationStack {
-            if let response = viewModel.productResponse {
-                Text(response.product.name)
-            } else {
+            VStack {
+                TextField("Enter product name", text: $viewModel.name, axis: .vertical)
+                if viewModel.isNameEmpty {
+                    Text("Add empty")
+                }
+                TextField("Enter product type", text: $viewModel.type, axis: .vertical)
+                if viewModel.isTypeEmpty {
+                    Text("Add empty tye")
+                }
+                TextField("Enter product price", text: $viewModel.price, axis: .vertical).keyboardType(.decimalPad)
+                if viewModel.isPriceEmpty {
+                    Text("Add empty wwr")
+                }
+                TextField("Enter product tax", text: $viewModel.tax, axis: .vertical).keyboardType(.decimalPad)
+                if !viewModel.images.isEmpty {
+                    HStack {
+                        ForEach(viewModel.images, id: \.self) { image in
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 72, height: 72)
+                        }
+                    }
+                }
+                Button("Select Images") {
+                    showPhotoPicker.toggle()
+                }
                 Button("Add Product") {
                     viewModel.addProduct(.mockData)
                 }
+                .disabled(viewModel.disableAddButton)
+                if let response = viewModel.productResponse {
+                    VStack {
+                        Text("Product Added!")
+                        Text(response.product.name)
+                    }
+                }
             }
+        }
+        .sheet(isPresented: $showPhotoPicker) {
+            ImagePicker(images: $viewModel.images)
         }
     }
 }

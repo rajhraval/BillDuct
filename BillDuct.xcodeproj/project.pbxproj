@@ -53,6 +53,12 @@
 		CF2AA84D2BBC219B00D5E77A /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA84B2BBC219B00D5E77A /* AddProductView.swift */; };
 		CF2AA8502BBC21B300D5E77A /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA84F2BBC21B300D5E77A /* AddProductViewModel.swift */; };
 		CF2AA8512BBC21B300D5E77A /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA84F2BBC21B300D5E77A /* AddProductViewModel.swift */; };
+		CF2AA8532BBC594100D5E77A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8522BBC594100D5E77A /* String+.swift */; };
+		CF2AA8542BBC594100D5E77A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8522BBC594100D5E77A /* String+.swift */; };
+		CF2AA8562BBC5EDF00D5E77A /* Publisher+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8552BBC5EDF00D5E77A /* Publisher+.swift */; };
+		CF2AA8572BBC5EDF00D5E77A /* Publisher+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8552BBC5EDF00D5E77A /* Publisher+.swift */; };
+		CF2AA8592BBC62F000D5E77A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8582BBC62F000D5E77A /* ImagePicker.swift */; };
+		CF2AA85A2BBC62F000D5E77A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8582BBC62F000D5E77A /* ImagePicker.swift */; };
 		CF38134A2B664AFA009AD64E /* BillDuctApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3813492B664AFA009AD64E /* BillDuctApp.swift */; };
 		CF38134C2B664AFA009AD64E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38134B2B664AFA009AD64E /* HomeView.swift */; };
 		CF38134E2B664AFB009AD64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF38134D2B664AFB009AD64E /* Assets.xcassets */; };
@@ -101,6 +107,9 @@
 		CF2AA8472BBC1EBF00D5E77A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CF2AA84B2BBC219B00D5E77A /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
 		CF2AA84F2BBC21B300D5E77A /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
+		CF2AA8522BBC594100D5E77A /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		CF2AA8552BBC5EDF00D5E77A /* Publisher+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+.swift"; sourceTree = "<group>"; };
+		CF2AA8582BBC62F000D5E77A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		CF3813462B664AFA009AD64E /* BillDuct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillDuct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3813492B664AFA009AD64E /* BillDuctApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDuctApp.swift; sourceTree = "<group>"; };
 		CF38134B2B664AFA009AD64E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -162,6 +171,8 @@
 				CF2AA8122BBBE17300D5E77A /* Font+.swift */,
 				CF2AA81F2BBBF88600D5E77A /* Data+.swift */,
 				CF2AA8432BBC1D6400D5E77A /* Double+.swift */,
+				CF2AA8522BBC594100D5E77A /* String+.swift */,
+				CF2AA8552BBC5EDF00D5E77A /* Publisher+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -226,6 +237,14 @@
 			path = "Add Product";
 			sourceTree = "<group>";
 		};
+		CF2AA85B2BBC640300D5E77A /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				CF2AA8582BBC62F000D5E77A /* ImagePicker.swift */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
 		CF38133D2B664AFA009AD64E = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +275,7 @@
 				CF38134D2B664AFB009AD64E /* Assets.xcassets */,
 				CF38134F2B664AFB009AD64E /* Preview Content */,
 				CF2AA8152BBBE17600D5E77A /* Extensions */,
+				CF2AA85B2BBC640300D5E77A /* UI Components */,
 			);
 			path = BillDuct;
 			sourceTree = "<group>";
@@ -417,7 +437,9 @@
 				CF2AA84C2BBC219B00D5E77A /* AddProductView.swift in Sources */,
 				CF3813792B664D21009AD64E /* Constants.swift in Sources */,
 				CF2AA8482BBC1EBF00D5E77A /* HomeViewModel.swift in Sources */,
+				CF2AA8592BBC62F000D5E77A /* ImagePicker.swift in Sources */,
 				CF2AA8442BBC1D6400D5E77A /* Double+.swift in Sources */,
+				CF2AA8562BBC5EDF00D5E77A /* Publisher+.swift in Sources */,
 				CF2AA80B2BBBDE3900D5E77A /* APIEndpoint.swift in Sources */,
 				CF38137B2B664D21009AD64E /* URL+.swift in Sources */,
 				CF3813772B664D21009AD64E /* UserDefaults+.swift in Sources */,
@@ -426,6 +448,7 @@
 				CF2AA81A2BBBEFC600D5E77A /* ProductResponse.swift in Sources */,
 				CF2AA80D2BBBDE3900D5E77A /* APIError.swift in Sources */,
 				CF2AA8092BBBDE3900D5E77A /* API.swift in Sources */,
+				CF2AA8532BBC594100D5E77A /* String+.swift in Sources */,
 				CF2AA81D2BBBF62300D5E77A /* MultiformRequest.swift in Sources */,
 				CF2AA8202BBBF88600D5E77A /* Data+.swift in Sources */,
 				CF2AA82A2BBC15E800D5E77A /* ProductData.swift in Sources */,
@@ -448,7 +471,9 @@
 				CF2AA84D2BBC219B00D5E77A /* AddProductView.swift in Sources */,
 				CF38137A2B664D21009AD64E /* Constants.swift in Sources */,
 				CF2AA8492BBC1EBF00D5E77A /* HomeViewModel.swift in Sources */,
+				CF2AA85A2BBC62F000D5E77A /* ImagePicker.swift in Sources */,
 				CF2AA8452BBC1D6400D5E77A /* Double+.swift in Sources */,
+				CF2AA8572BBC5EDF00D5E77A /* Publisher+.swift in Sources */,
 				CF2AA80C2BBBDE3900D5E77A /* APIEndpoint.swift in Sources */,
 				CF38137C2B664D21009AD64E /* URL+.swift in Sources */,
 				CF3813782B664D21009AD64E /* UserDefaults+.swift in Sources */,
@@ -457,6 +482,7 @@
 				CF2AA81B2BBBEFC600D5E77A /* ProductResponse.swift in Sources */,
 				CF2AA80E2BBBDE3900D5E77A /* APIError.swift in Sources */,
 				CF2AA80A2BBBDE3900D5E77A /* API.swift in Sources */,
+				CF2AA8542BBC594100D5E77A /* String+.swift in Sources */,
 				CF2AA81E2BBBF62300D5E77A /* MultiformRequest.swift in Sources */,
 				CF2AA8212BBBF88600D5E77A /* Data+.swift in Sources */,
 				CF2AA82B2BBC15E800D5E77A /* ProductData.swift in Sources */,
