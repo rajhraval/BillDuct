@@ -35,6 +35,15 @@ extension MultiformData {
     }
 }
 
+enum MimeType: String {
+    case jpeg
+    case png
+
+    var value: String {
+        return "image/\(rawValue)"
+    }
+}
+
 struct MultiformRequest: MultiformData {
     var data: Data
 
@@ -67,13 +76,15 @@ struct MultiformRequest: MultiformData {
     public mutating func addFile(
         key: String,
         fileName: String,
-        fileMimeType: String,
-        fileData: Data
+        fileMimeType: MimeType = .png,
+        fileData: String
     ) {
         appendBoundarySeparator()
         data.append(disposition(key) + "; filename=\"\(fileName)\"" + separator)
-        data.append("Content-Type: \(fileMimeType)" + separator + separator)
-        data.append(fileData)
+        data.append("Content-Type: \(fileMimeType.rawValue)" + separator + separator)
+        if let fileData = fileData.data(using: .utf8) {
+            data.append(fileData)
+        }
         appendSeparator()
     }
 }

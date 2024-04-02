@@ -45,12 +45,16 @@
 		CF2AA83F2BBC168F00D5E77A /* PlusJakartaSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF2AA82D2BBC167B00D5E77A /* PlusJakartaSans-Medium.ttf */; };
 		CF2AA8402BBC168F00D5E77A /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF2AA8312BBC167B00D5E77A /* PlusJakartaSans-SemiBold.ttf */; };
 		CF2AA8412BBC168F00D5E77A /* PlusJakartaSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF2AA82F2BBC167B00D5E77A /* PlusJakartaSans-ExtraLight.ttf */; };
+		CF2AA8442BBC1D6400D5E77A /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8432BBC1D6400D5E77A /* Double+.swift */; };
+		CF2AA8452BBC1D6400D5E77A /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8432BBC1D6400D5E77A /* Double+.swift */; };
+		CF2AA8482BBC1EBF00D5E77A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8472BBC1EBF00D5E77A /* HomeViewModel.swift */; };
+		CF2AA8492BBC1EBF00D5E77A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8472BBC1EBF00D5E77A /* HomeViewModel.swift */; };
 		CF38134A2B664AFA009AD64E /* BillDuctApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3813492B664AFA009AD64E /* BillDuctApp.swift */; };
-		CF38134C2B664AFA009AD64E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38134B2B664AFA009AD64E /* ContentView.swift */; };
+		CF38134C2B664AFA009AD64E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38134B2B664AFA009AD64E /* HomeView.swift */; };
 		CF38134E2B664AFB009AD64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF38134D2B664AFB009AD64E /* Assets.xcassets */; };
 		CF3813512B664AFB009AD64E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF3813502B664AFB009AD64E /* Preview Assets.xcassets */; };
 		CF3813692B664BB1009AD64E /* BillDuctApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3813492B664AFA009AD64E /* BillDuctApp.swift */; };
-		CF38136A2B664BB1009AD64E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38134B2B664AFA009AD64E /* ContentView.swift */; };
+		CF38136A2B664BB1009AD64E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38134B2B664AFA009AD64E /* HomeView.swift */; };
 		CF38136B2B664BB6009AD64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF38134D2B664AFB009AD64E /* Assets.xcassets */; };
 		CF38136C2B664BB6009AD64E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF3813502B664AFB009AD64E /* Preview Assets.xcassets */; };
 		CF3813712B664D06009AD64E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3813702B664D06009AD64E /* CoreDataStack.swift */; };
@@ -89,9 +93,11 @@
 		CF2AA8312BBC167B00D5E77A /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		CF2AA8322BBC167B00D5E77A /* PlusJakartaSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Light.ttf"; sourceTree = "<group>"; };
 		CF2AA8332BBC167B00D5E77A /* PlusJakartaSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		CF2AA8432BBC1D6400D5E77A /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
+		CF2AA8472BBC1EBF00D5E77A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CF3813462B664AFA009AD64E /* BillDuct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillDuct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3813492B664AFA009AD64E /* BillDuctApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDuctApp.swift; sourceTree = "<group>"; };
-		CF38134B2B664AFA009AD64E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CF38134B2B664AFA009AD64E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CF38134D2B664AFB009AD64E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF3813502B664AFB009AD64E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF38135B2B664B9E009AD64E /* BillDuct Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BillDuct Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +155,7 @@
 				CF3813752B664D21009AD64E /* URL+.swift */,
 				CF2AA8122BBBE17300D5E77A /* Font+.swift */,
 				CF2AA81F2BBBF88600D5E77A /* Data+.swift */,
+				CF2AA8432BBC1D6400D5E77A /* Double+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -186,6 +193,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		CF2AA8462BBC1EAF00D5E77A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CF2AA84A2BBC1EC200D5E77A /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CF2AA84A2BBC1EC200D5E77A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CF38134B2B664AFA009AD64E /* HomeView.swift */,
+				CF2AA8472BBC1EBF00D5E77A /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		CF38133D2B664AFA009AD64E = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +234,7 @@
 				CF2AA80F2BBBDE3C00D5E77A /* Networking */,
 				CF38136F2B664CC3009AD64E /* Config */,
 				CF3813492B664AFA009AD64E /* BillDuctApp.swift */,
-				CF38134B2B664AFA009AD64E /* ContentView.swift */,
+				CF2AA8462BBC1EAF00D5E77A /* Modules */,
 				CF3813842B664D69009AD64E /* Model */,
 				CF38137F2B664D49009AD64E /* Helpers */,
 				CF38134D2B664AFB009AD64E /* Assets.xcassets */,
@@ -375,6 +399,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF3813792B664D21009AD64E /* Constants.swift in Sources */,
+				CF2AA8482BBC1EBF00D5E77A /* HomeViewModel.swift in Sources */,
+				CF2AA8442BBC1D6400D5E77A /* Double+.swift in Sources */,
 				CF2AA80B2BBBDE3900D5E77A /* APIEndpoint.swift in Sources */,
 				CF38137B2B664D21009AD64E /* URL+.swift in Sources */,
 				CF3813772B664D21009AD64E /* UserDefaults+.swift in Sources */,
@@ -390,7 +416,7 @@
 				CF3813712B664D06009AD64E /* CoreDataStack.swift in Sources */,
 				CF2AA8262BBBFDFC00D5E77A /* ProductEndpoint.swift in Sources */,
 				CF38137D2B664D21009AD64E /* Logger.swift in Sources */,
-				CF38134C2B664AFA009AD64E /* ContentView.swift in Sources */,
+				CF38134C2B664AFA009AD64E /* HomeView.swift in Sources */,
 				CF38134A2B664AFA009AD64E /* BillDuctApp.swift in Sources */,
 				CF2AA8172BBBEEBC00D5E77A /* Product.swift in Sources */,
 				CF2AA8232BBBFDBD00D5E77A /* ProductService.swift in Sources */,
@@ -402,6 +428,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF38137A2B664D21009AD64E /* Constants.swift in Sources */,
+				CF2AA8492BBC1EBF00D5E77A /* HomeViewModel.swift in Sources */,
+				CF2AA8452BBC1D6400D5E77A /* Double+.swift in Sources */,
 				CF2AA80C2BBBDE3900D5E77A /* APIEndpoint.swift in Sources */,
 				CF38137C2B664D21009AD64E /* URL+.swift in Sources */,
 				CF3813782B664D21009AD64E /* UserDefaults+.swift in Sources */,
@@ -418,7 +446,7 @@
 				CF2AA8272BBBFDFC00D5E77A /* ProductEndpoint.swift in Sources */,
 				CF38137E2B664D21009AD64E /* Logger.swift in Sources */,
 				CF3813692B664BB1009AD64E /* BillDuctApp.swift in Sources */,
-				CF38136A2B664BB1009AD64E /* ContentView.swift in Sources */,
+				CF38136A2B664BB1009AD64E /* HomeView.swift in Sources */,
 				CF2AA8182BBBEEBC00D5E77A /* Product.swift in Sources */,
 				CF2AA8242BBBFDBD00D5E77A /* ProductService.swift in Sources */,
 			);

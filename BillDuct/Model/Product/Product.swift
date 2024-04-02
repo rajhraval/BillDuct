@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct Product: Codable {
+struct Product: Identifiable, Codable {
+    let id = UUID()
     let name: String
     let type: String
     let image: String

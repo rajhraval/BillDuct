@@ -9,7 +9,7 @@ import Foundation
 
 enum ProductEndpoint: Endpoint {
     case getProducts
-    case addProduct(data: MultiformData)
+    case addProduct(requestData: MultiformData)
 
     var baseURL: URL {
         return URL(string: "https://app.getswipe.in/api/public/")!
