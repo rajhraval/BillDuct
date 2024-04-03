@@ -11,7 +11,6 @@ struct HomeView: View {
 
     @StateObject private var viewModel = HomeViewModel()
 
-
     @State private var showAddView = false
 
     var body: some View {
@@ -64,3 +63,33 @@ struct HomeView: View {
 #Preview {
     HomeView()
 }
+
+/*
+
+TODO: EMPTY STATE VIEW, CACHING IMAGE AND API RESPONSE FOR 2 MINUTES, REFRESH BUTTON, NAVIGATION VIEW, DOCUMENTATION, 1:1 Image Resolution, TextField Errors Showcase
+
+GeometryReader { geo in
+    ZStack(alignment: .bottom) {
+        Group {
+            BDButton("Show Alert") {
+                withAnimation {
+                    showAlert.toggle()
+                }
+            }
+        }
+        .frame(width: geo.size.width, height: geo.size.height)
+        if showAlert {
+            BDCustomAlertSheet(systemName: "checkmark.circle.fill", title: "Product Added") {
+                Text("Hello")
+            } dismissAction: {
+                showAlert.toggle()
+            }
+            .background(.pink)
+            .roundedCorners(24)
+            .customPadding(.horizontal, spacing: .medium)
+        }
+    }
+    .frame(width: geo.size.width, height: geo.size.height)
+    .background(.orange)
+}
+*/
