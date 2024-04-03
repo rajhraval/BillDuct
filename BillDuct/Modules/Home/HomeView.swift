@@ -9,7 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
 
-    @ObservedObject private var viewModel = HomeViewModel()
+    @StateObject private var viewModel = HomeViewModel()
+
 
     @State private var showAddView = false
 
@@ -25,20 +26,32 @@ struct HomeView: View {
                         }
                     }
             } else {
-                List {
-                    ForEach(viewModel.products) { product in
-                        Text(product.name)
+                if viewModel.filteredProducts.isEmpty {
+                    Text("No results found!")
+                        .toolbar {
+                            ToolbarItem(placement: .primaryAction) {
+                                Button("Add") {
+                                    showAddView.toggle()
+                                }
+                            }
+                        }
+                } else {
+                    List {
+                        ForEach(viewModel.filteredProducts) { product in
+                            Text(product.name)
+                        }
                     }
-                }
-                .toolbar {
-                    ToolbarItem(placement: .primaryAction) {
-                        Button("Add") {
-                            showAddView.toggle()
+                    .toolbar {
+                        ToolbarItem(placement: .primaryAction) {
+                            Button("Add") {
+                                showAddView.toggle()
+                            }
                         }
                     }
                 }
             }
         }
+        .searchable(text: $viewModel.searchText, prompt: Text("Search"))
         .onAppear {
             viewModel.fetchProducts()
         }

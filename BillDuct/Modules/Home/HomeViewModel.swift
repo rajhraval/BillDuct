@@ -9,6 +9,15 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
 
+    var filteredProducts: [Product] {
+        if !searchText.isEmpty {
+            return products.filter { $0.name.contains(searchText) }
+        } else {
+            return products
+        }
+    }
+
+    @Published var searchText = ""
     @Published var products: [Product] = []
 
     private var productService: ProductService!
