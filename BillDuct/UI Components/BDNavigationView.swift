@@ -57,7 +57,8 @@ struct BDNavigationView: View {
     }
 
     var body: some View {
-        BDVStack(alignment: .leading, spacing: .medium) {
+        BDVStack(alignment: .leading, spacing: .regularTwo) {
+            Spacer()
             if backButtonRole != .none {
                 BDButton(systemName: backButtonRole.image) {
                     dismiss()
@@ -78,13 +79,14 @@ struct BDNavigationView: View {
                 }
             }
         }
-        .customPadding(.top, spacing: backButtonRole == .none ? .navigation : .extraLarge)
         .customPadding(.horizontal, spacing: .medium)
+        .frame(maxHeight: 96)
     }
 }
 
 #Preview {
     VStack {
         BDNavigationView(title: "Products")
+        Spacer()
     }
 }

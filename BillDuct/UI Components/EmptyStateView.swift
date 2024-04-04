@@ -143,6 +143,7 @@ struct EmptyStateView: View {
                     Text(_subtitle)
                         .font(.pSmall())
                         .foregroundStyle(.secondary)
+                        .customPadding(.horizontal, spacing: .medium)
                 }
             }
             .customPadding(.bottom, spacing: .small)

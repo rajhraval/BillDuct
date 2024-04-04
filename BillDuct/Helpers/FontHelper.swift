@@ -36,6 +36,7 @@ enum FontSize: CGFloat {
     case h3 = 22
     case pLarge = 20
     case p = 18
+    case pTwo = 14
     case pSmall = 16
     case pTiny = 12
 }

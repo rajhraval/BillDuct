@@ -105,6 +105,8 @@
 		CF4C8FDA2BBE63A700D02293 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FD82BBE63A700D02293 /* EmptyStateView.swift */; };
 		CF4C8FDF2BBF007100D02293 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FDE2BBF007100D02293 /* UIImage+.swift */; };
 		CF4C8FE02BBF007100D02293 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FDE2BBF007100D02293 /* UIImage+.swift */; };
+		CF4C8FE22BBF0F8C00D02293 /* HomeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FE12BBF0F8C00D02293 /* HomeRowView.swift */; };
+		CF4C8FE32BBF0F8C00D02293 /* HomeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FE12BBF0F8C00D02293 /* HomeRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +165,7 @@
 		CF4C8FD52BBDA90700D02293 /* BDNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDNavigationView.swift; sourceTree = "<group>"; };
 		CF4C8FD82BBE63A700D02293 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		CF4C8FDE2BBF007100D02293 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		CF4C8FE12BBF0F8C00D02293 /* HomeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +272,7 @@
 			children = (
 				CF38134B2B664AFA009AD64E /* HomeView.swift */,
 				CF2AA8472BBC1EBF00D5E77A /* HomeViewModel.swift */,
+				CF4C8FE12BBF0F8C00D02293 /* HomeRowView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -525,6 +529,7 @@
 				CF3813712B664D06009AD64E /* CoreDataStack.swift in Sources */,
 				CF2AA8262BBBFDFC00D5E77A /* ProductEndpoint.swift in Sources */,
 				CF4C8FCC2BBD337000D02293 /* Helper+Modifiers.swift in Sources */,
+				CF4C8FE22BBF0F8C00D02293 /* HomeRowView.swift in Sources */,
 				CF2AA8502BBC21B300D5E77A /* AddProductViewModel.swift in Sources */,
 				CF4C8FCF2BBD355500D02293 /* BDSection.swift in Sources */,
 				CF38137D2B664D21009AD64E /* Logger.swift in Sources */,
@@ -572,6 +577,7 @@
 				CF3813722B664D06009AD64E /* CoreDataStack.swift in Sources */,
 				CF4C8FCA2BBD326000D02293 /* Stacks.swift in Sources */,
 				CF2AA8272BBBFDFC00D5E77A /* ProductEndpoint.swift in Sources */,
+				CF4C8FE32BBF0F8C00D02293 /* HomeRowView.swift in Sources */,
 				CF2AA8512BBC21B300D5E77A /* AddProductViewModel.swift in Sources */,
 				CF38137E2B664D21009AD64E /* Logger.swift in Sources */,
 				CF3813692B664BB1009AD64E /* BillDuctApp.swift in Sources */,

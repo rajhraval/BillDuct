@@ -14,43 +14,33 @@ struct HomeView: View {
 
     var body: some View {
         NavigationStack {
-            if viewModel.products.isEmpty {
-                ProgressView()
-                    .toolbar {
-                        ToolbarItem(placement: .primaryAction) {
-                            Button("Add") {
-                                showAddView.toggle()
-                            }
-                        }
-                    }
-            } else {
-                if viewModel.filteredProducts.isEmpty {
-                    Text("No results found!")
-                        .toolbar {
-                            ToolbarItem(placement: .primaryAction) {
-                                Button("Add") {
-                                    showAddView.toggle()
+            BDVStack(spacing: .regularThree) {
+                BDNavigationView(title: "Products", rightButtonRole: .add) {
+                    showAddView.toggle()
+                }
+                BDVStack(spacing: .regularThree) {
+                    BDTextField(placeholder: "Search Products", text: $viewModel.searchText, isSearchEnabled: true)
+                    switch viewModel.loadingState {
+                    case .idle:
+                        ScrollView {
+                            BDVStack(spacing: .regularThree) {
+                                ForEach(viewModel.filteredProducts) { product in
+                                    HomeRowView(product: product)
                                 }
                             }
                         }
-                } else {
-                    List {
-                        ForEach(viewModel.filteredProducts) { product in
-                            AnyView(product.productImage)
-                            Text(product.name)
-                        }
-                    }
-                    .toolbar {
-                        ToolbarItem(placement: .primaryAction) {
-                            Button("Add") {
-                                showAddView.toggle()
-                            }
-                        }
+                        .scrollIndicators(.hidden)
+                    case .loading:
+                        ProgressView()
+                    case .error(let type):
+                        EmptyStateView(configuration: .error(error: type))
                     }
                 }
+                .customPadding(.horizontal, spacing: .medium)
+                Spacer()
             }
+            .ignoresSafeArea(.container, edges: .bottom)
         }
-        .searchable(text: $viewModel.searchText, prompt: Text("Search"))
         .onAppear {
             viewModel.fetchProducts()
         }
@@ -93,3 +83,39 @@ GeometryReader { geo in
     .background(.orange)
 }
 */
+
+//if viewModel.products.isEmpty {
+//    ProgressView()
+//        .toolbar {
+//            ToolbarItem(placement: .primaryAction) {
+//                Button("Add") {
+//                    showAddView.toggle()
+//                }
+//            }
+//        }
+//} else {
+//    if viewModel.filteredProducts.isEmpty {
+//        Text("No results found!")
+//            .toolbar {
+//                ToolbarItem(placement: .primaryAction) {
+//                    Button("Add") {
+//                        showAddView.toggle()
+//                    }
+//                }
+//            }
+//    } else {
+//        List {
+//            ForEach(viewModel.filteredProducts) { product in
+//                AnyView(product.productImage)
+//                Text(product.name)
+//            }
+//        }
+//        .toolbar {
+//            ToolbarItem(placement: .primaryAction) {
+//                Button("Add") {
+//                    showAddView.toggle()
+//                }
+//            }
+//        }
+//    }
+//}
