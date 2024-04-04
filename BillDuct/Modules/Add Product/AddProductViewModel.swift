@@ -33,7 +33,7 @@ final class AddProductViewModel: ObservableObject {
 
     @MainActor
     func addProduct() {
-        let imagesData = images.toPNGData
+        let imagesData = images.isEmpty ? nil : images.toPNGData
         let product = ProductData(name: name, type: type, price: price.toDouble, tax: tax.toDouble, images: imagesData)
         Task {
             do {
