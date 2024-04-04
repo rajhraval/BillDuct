@@ -37,6 +37,8 @@ public struct Constants {
         case large
         /// Extra Large, 36
         case extraLarge
+        /// Navigation, 72
+        case navigation
         /// Custom
         case custom(value: CGFloat)
 
@@ -62,6 +64,8 @@ public struct Constants {
                 return 0
             case .custom(let value):
                 return value
+            case .navigation:
+                return 72
             }
         }
     }

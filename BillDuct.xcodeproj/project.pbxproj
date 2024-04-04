@@ -101,6 +101,8 @@
 		CF4C8FD42BBD50DB00D02293 /* BDTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FC62BBD31F600D02293 /* BDTextField.swift */; };
 		CF4C8FD62BBDA90700D02293 /* BDNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FD52BBDA90700D02293 /* BDNavigationView.swift */; };
 		CF4C8FD72BBDA90700D02293 /* BDNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FD52BBDA90700D02293 /* BDNavigationView.swift */; };
+		CF4C8FD92BBE63A700D02293 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FD82BBE63A700D02293 /* EmptyStateView.swift */; };
+		CF4C8FDA2BBE63A700D02293 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FD82BBE63A700D02293 /* EmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +159,7 @@
 		CF4C8FCE2BBD355500D02293 /* BDSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDSection.swift; sourceTree = "<group>"; };
 		CF4C8FD12BBD374500D02293 /* BDCustomAlertSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDCustomAlertSheet.swift; sourceTree = "<group>"; };
 		CF4C8FD52BBDA90700D02293 /* BDNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDNavigationView.swift; sourceTree = "<group>"; };
+		CF4C8FD82BBE63A700D02293 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +287,7 @@
 				CF4C8FCE2BBD355500D02293 /* BDSection.swift */,
 				CF4C8FD12BBD374500D02293 /* BDCustomAlertSheet.swift */,
 				CF4C8FD52BBDA90700D02293 /* BDNavigationView.swift */,
+				CF4C8FD82BBE63A700D02293 /* EmptyStateView.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -504,6 +508,7 @@
 				CF2AA81A2BBBEFC600D5E77A /* ProductResponse.swift in Sources */,
 				CF2AA80D2BBBDE3900D5E77A /* APIError.swift in Sources */,
 				CF2AA8092BBBDE3900D5E77A /* API.swift in Sources */,
+				CF4C8FD92BBE63A700D02293 /* EmptyStateView.swift in Sources */,
 				CF3C770B2BBD30B8005E2D74 /* UIWindow+.swift in Sources */,
 				CF2AA8532BBC594100D5E77A /* String+.swift in Sources */,
 				CF4C8FC72BBD31F600D02293 /* BDTextField.swift in Sources */,
@@ -549,6 +554,7 @@
 				CF2AA80E2BBBDE3900D5E77A /* APIError.swift in Sources */,
 				CF4C8FD42BBD50DB00D02293 /* BDTextField.swift in Sources */,
 				CF2AA80A2BBBDE3900D5E77A /* API.swift in Sources */,
+				CF4C8FDA2BBE63A700D02293 /* EmptyStateView.swift in Sources */,
 				CF3C770C2BBD30B8005E2D74 /* UIWindow+.swift in Sources */,
 				CF2AA8542BBC594100D5E77A /* String+.swift in Sources */,
 				CF2AA81E2BBBF62300D5E77A /* MultiformRequest.swift in Sources */,

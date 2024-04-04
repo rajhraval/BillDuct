@@ -30,7 +30,7 @@ extension Font {
     /// Bold, 12
     static var pTiny = customFont(weight: .bold, size: .pSmall)
     /// Heavy, 18
-    static var symbol: Font = .system(size: 24, weight: .semibold)
+    static var symbol: Font = .system(size: 28, weight: .semibold)
 
 }
 

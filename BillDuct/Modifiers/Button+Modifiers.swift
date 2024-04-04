@@ -20,6 +20,19 @@ struct RegularButtonStyle: ViewModifier {
     }
 }
 
+struct ChipButtonStyle: ViewModifier {
+
+    let style: BDButtonStyle
+
+    func body(content: Content) -> some View {
+        content
+            .buttonStyle(.bordered)
+            .tint(style.backgroundColor)
+            .buttonBorderShape(.capsule)
+    }
+}
+
+
 struct SymbolButtonStyle: ViewModifier {
 
     let style: BDButtonStyle

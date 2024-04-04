@@ -67,8 +67,8 @@ struct BDButton<Label: View>: View {
         self.label = {
             AnyView(
                 HStack(spacing: 4) {
-                    Text(title)
                     Image(systemName: systemName)
+                    Text(title)
                 }
             )
         }
@@ -84,10 +84,13 @@ struct BDButton<Label: View>: View {
             if Label.self == Image.self {
                 label()
                     .font(.symbol)
-            } else {
+            } else if Label.self == Text.self {
                 label()
                     .frame(maxWidth: .infinity)
                     .font(.p)
+            } else {
+                label()
+                    .font(.pSmall())
             }
         }
     }
