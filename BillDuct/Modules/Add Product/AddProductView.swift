@@ -34,7 +34,7 @@ struct AddProductView: View {
                     showPhotoPicker.toggle()
                 }
                 Button("Add Product") {
-                    viewModel.addProduct(.mockData)
+                    viewModel.addProduct()
                 }
                 .disabled(viewModel.disableAddButton)
                 if let response = viewModel.productResponse {

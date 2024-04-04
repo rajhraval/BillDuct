@@ -9,15 +9,23 @@ import SwiftUI
 
 struct HomeView: View {
 
-    @EnvironmentObject private var networkManager: NetworkManager
     @StateObject private var viewModel = HomeViewModel()
     @State private var showAddView = false
 
     var body: some View {
         NavigationStack {
-            if networkManager.isConnected {
-                if viewModel.products.isEmpty {
-                    ProgressView()
+            if viewModel.products.isEmpty {
+                ProgressView()
+                    .toolbar {
+                        ToolbarItem(placement: .primaryAction) {
+                            Button("Add") {
+                                showAddView.toggle()
+                            }
+                        }
+                    }
+            } else {
+                if viewModel.filteredProducts.isEmpty {
+                    Text("No results found!")
                         .toolbar {
                             ToolbarItem(placement: .primaryAction) {
                                 Button("Add") {
@@ -26,32 +34,20 @@ struct HomeView: View {
                             }
                         }
                 } else {
-                    if viewModel.filteredProducts.isEmpty {
-                        Text("No results found!")
-                            .toolbar {
-                                ToolbarItem(placement: .primaryAction) {
-                                    Button("Add") {
-                                        showAddView.toggle()
-                                    }
-                                }
-                            }
-                    } else {
-                        List {
-                            ForEach(viewModel.filteredProducts) { product in
-                                Text(product.name)
-                            }
+                    List {
+                        ForEach(viewModel.filteredProducts) { product in
+                            AnyView(product.productImage)
+                            Text(product.name)
                         }
-                        .toolbar {
-                            ToolbarItem(placement: .primaryAction) {
-                                Button("Add") {
-                                    showAddView.toggle()
-                                }
+                    }
+                    .toolbar {
+                        ToolbarItem(placement: .primaryAction) {
+                            Button("Add") {
+                                showAddView.toggle()
                             }
                         }
                     }
                 }
-            } else {
-                Text("No Internet")
             }
         }
         .searchable(text: $viewModel.searchText, prompt: Text("Search"))
@@ -66,12 +62,11 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
-        .environmentObject(NetworkManager())
 }
 
 /*
 
-TODO:  CACHING IMAGE AND API RESPONSE FOR 2 MINUTES, 1:1 Image Resolution, Reachability
+TODO:  CACHING IMAGE AND API RESPONSE FOR 2 MINUTES, 1:1 Image Resolution
 
 GeometryReader { geo in
     ZStack(alignment: .bottom) {

@@ -17,6 +17,7 @@ final class HomeViewModel: ObservableObject {
         }
     }
 
+    @Published var loadingState: LoadingState = .loading
     @Published var searchText = ""
     @Published var products: [Product] = []
 
@@ -30,8 +31,10 @@ final class HomeViewModel: ObservableObject {
     func fetchProducts() {
         Task {
             do {
+                loadingState = .idle
                 products = try await productService.getProducts()
             } catch let error {
+                loadingState = .error(type: error)
                 Log.error(error)
             }
         }

@@ -10,13 +10,10 @@ import SwiftUI
 @main
 struct BillDuctApp: App {
 
-    @StateObject private var networkManager = NetworkManager()
-
     var body: some Scene {
         WindowGroup {
             HomeView()
                 .environment(\.managedObjectContext, CoreDataStack.shared.viewContext)
-                .environmentObject(networkManager)
         }
     }
 }

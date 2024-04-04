@@ -12,6 +12,7 @@ import UIKit.UIImage
 final class AddProductViewModel: ObservableObject {
 
     @Published var productResponse: ProductResponse?
+    @Published var loadingState: LoadingState = .loading
 
     @Published var name: String = ""
     @Published var type: String = ""
@@ -31,11 +32,15 @@ final class AddProductViewModel: ObservableObject {
     }
 
     @MainActor
-    func addProduct(_ product: ProductData) {
+    func addProduct() {
+        let imagesData = images.toPNGData
+        let product = ProductData(name: name, type: type, price: price.toDouble, tax: tax.toDouble, images: imagesData)
         Task {
             do {
+                loadingState = .idle
                 productResponse = try await productService.addProduct(product)
             } catch let error {
+                loadingState = .error(type: error)
                 Log.error(error)
             }
         }

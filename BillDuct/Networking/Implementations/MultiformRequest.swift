@@ -76,14 +76,12 @@ struct MultiformRequest: MultiformData {
         key: String,
         fileName: String,
         fileMimeType: MimeType = .png,
-        fileData: String
+        fileData: Data
     ) {
         appendBoundarySeparator()
         data.append(disposition(key) + "; filename=\"\(fileName)\"" + separator)
         data.append("Content-Type: \(fileMimeType.rawValue)" + separator + separator)
-        if let fileData = fileData.data(using: .utf8) {
-            data.append(fileData)
-        }
+        data.append(fileData)
         appendSeparator()
     }
 }

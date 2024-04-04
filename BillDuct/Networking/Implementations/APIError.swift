@@ -11,4 +11,5 @@ enum APIError: Error {
     case invalidURLError
     case networkingError(error: Error)
     case decodingError(error: Error)
+    case internetError
 }

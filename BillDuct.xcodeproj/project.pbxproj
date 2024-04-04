@@ -103,8 +103,8 @@
 		CF4C8FD72BBDA90700D02293 /* BDNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FD52BBDA90700D02293 /* BDNavigationView.swift */; };
 		CF4C8FD92BBE63A700D02293 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FD82BBE63A700D02293 /* EmptyStateView.swift */; };
 		CF4C8FDA2BBE63A700D02293 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FD82BBE63A700D02293 /* EmptyStateView.swift */; };
-		CF4C8FDC2BBEE4A600D02293 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FDB2BBEE4A600D02293 /* NetworkManager.swift */; };
-		CF4C8FDD2BBEE4A600D02293 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FDB2BBEE4A600D02293 /* NetworkManager.swift */; };
+		CF4C8FDF2BBF007100D02293 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FDE2BBF007100D02293 /* UIImage+.swift */; };
+		CF4C8FE02BBF007100D02293 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FDE2BBF007100D02293 /* UIImage+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,7 +162,7 @@
 		CF4C8FD12BBD374500D02293 /* BDCustomAlertSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDCustomAlertSheet.swift; sourceTree = "<group>"; };
 		CF4C8FD52BBDA90700D02293 /* BDNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDNavigationView.swift; sourceTree = "<group>"; };
 		CF4C8FD82BBE63A700D02293 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
-		CF4C8FDB2BBEE4A600D02293 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CF4C8FDE2BBF007100D02293 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +217,7 @@
 				CF3C77042BBD25B9005E2D74 /* View+.swift */,
 				CF3C770A2BBD30B8005E2D74 /* UIWindow+.swift */,
 				CF3C770D2BBD3135005E2D74 /* UIScreen+.swift */,
+				CF4C8FDE2BBF007100D02293 /* UIImage+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -356,7 +357,6 @@
 				CF2AA8022BBBDE0000D5E77A /* FontHelper.swift */,
 				CF3813742B664D21009AD64E /* Constants.swift */,
 				CF3813762B664D21009AD64E /* Logger.swift */,
-				CF4C8FDB2BBEE4A600D02293 /* NetworkManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -506,7 +506,6 @@
 				CF2AA80B2BBBDE3900D5E77A /* APIEndpoint.swift in Sources */,
 				CF38137B2B664D21009AD64E /* URL+.swift in Sources */,
 				CF3813772B664D21009AD64E /* UserDefaults+.swift in Sources */,
-				CF4C8FDC2BBEE4A600D02293 /* NetworkManager.swift in Sources */,
 				CF4C8FD62BBDA90700D02293 /* BDNavigationView.swift in Sources */,
 				CF2AA8132BBBE17300D5E77A /* Font+.swift in Sources */,
 				CF2AA8032BBBDE0000D5E77A /* FontHelper.swift in Sources */,
@@ -532,6 +531,7 @@
 				CF38134C2B664AFA009AD64E /* HomeView.swift in Sources */,
 				CF38134A2B664AFA009AD64E /* BillDuctApp.swift in Sources */,
 				CF2AA8172BBBEEBC00D5E77A /* Product.swift in Sources */,
+				CF4C8FDF2BBF007100D02293 /* UIImage+.swift in Sources */,
 				CF3C77052BBD25B9005E2D74 /* View+.swift in Sources */,
 				CF2AA8232BBBFDBD00D5E77A /* ProductService.swift in Sources */,
 			);
@@ -553,7 +553,6 @@
 				CF38137C2B664D21009AD64E /* URL+.swift in Sources */,
 				CF3813782B664D21009AD64E /* UserDefaults+.swift in Sources */,
 				CF2AA8142BBBE17300D5E77A /* Font+.swift in Sources */,
-				CF4C8FDD2BBEE4A600D02293 /* NetworkManager.swift in Sources */,
 				CF4C8FD72BBDA90700D02293 /* BDNavigationView.swift in Sources */,
 				CF2AA8042BBBDE0000D5E77A /* FontHelper.swift in Sources */,
 				CF2AA81B2BBBEFC600D5E77A /* ProductResponse.swift in Sources */,
@@ -579,6 +578,7 @@
 				CF38136A2B664BB1009AD64E /* HomeView.swift in Sources */,
 				CF4C8FD32BBD374500D02293 /* BDCustomAlertSheet.swift in Sources */,
 				CF2AA8182BBBEEBC00D5E77A /* Product.swift in Sources */,
+				CF4C8FE02BBF007100D02293 /* UIImage+.swift in Sources */,
 				CF3C77062BBD25B9005E2D74 /* View+.swift in Sources */,
 				CF2AA8242BBBFDBD00D5E77A /* ProductService.swift in Sources */,
 			);
