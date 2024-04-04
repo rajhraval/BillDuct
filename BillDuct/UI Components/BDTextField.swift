@@ -32,7 +32,8 @@ struct BDTextField: View {
                         text = ""
                     }
                 }
-                .symbolButtonStyle(.primary)
+                .transition(.opacity)
+                .symbolTextButtonStyle(.primary)
                 .padding(.trailing)
             }
         }

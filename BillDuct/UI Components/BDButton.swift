@@ -83,7 +83,6 @@ struct BDButton<Label: View>: View {
         } label: {
             if Label.self == Image.self {
                 label()
-                    .font(.symbol)
             } else if Label.self == Text.self {
                 label()
                     .frame(maxWidth: .infinity)

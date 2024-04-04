@@ -28,7 +28,7 @@ extension Font {
     /// Bold, 16
     static func pSmall(isBold: Bool = false) -> Font { customFont(weight: isBold ? .bold : .semiBold, size: .pSmall) }
     /// Bold, 12
-    static var pTiny = customFont(weight: .bold, size: .pSmall)
+    static var pTiny = customFont(weight: .medium, size: .pSmall)
     /// Heavy, 18
     static var symbol: Font = .system(size: 28, weight: .semibold)
 

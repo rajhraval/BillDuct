@@ -11,6 +11,8 @@ import Foundation
 extension Publisher where Output == String, Failure == Never {
     var isEmpty: AnyPublisher<Bool, Never> {
         map { $0.isEmpty }
+            .dropFirst()
+            .removeDuplicates()
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
     }

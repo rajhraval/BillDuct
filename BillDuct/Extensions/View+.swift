@@ -57,6 +57,10 @@ extension View {
         modifier(SymbolButtonStyle(style: style))
     }
 
+    func symbolTextButtonStyle(_ style: BDButtonStyle) -> some View {
+        modifier(TextSymbolButtonStyle(style: style))
+    }
+
     func chipButtonStyle(_ style: BDButtonStyle) -> some View {
         modifier(ChipButtonStyle(style: style))
     }

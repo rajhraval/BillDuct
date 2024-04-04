@@ -66,7 +66,7 @@ struct HomeView: View {
 
 /*
 
-TODO:  CACHING IMAGE AND API RESPONSE FOR 2 MINUTES, 1:1 Image Resolution, TextField Errors Showcase
+TODO:  CACHING IMAGE AND API RESPONSE FOR 2 MINUTES, 1:1 Image Resolution, TextField Errors Showcase, Reachability
 
 GeometryReader { geo in
     ZStack(alignment: .bottom) {

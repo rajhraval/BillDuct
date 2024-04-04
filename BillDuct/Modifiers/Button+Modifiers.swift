@@ -39,6 +39,18 @@ struct SymbolButtonStyle: ViewModifier {
 
     func body(content: Content) -> some View {
         content
+            .font(.symbol)
+            .foregroundStyle(style.backgroundColor)
+    }
+}
+
+struct TextSymbolButtonStyle: ViewModifier {
+
+    let style: BDButtonStyle
+
+    func body(content: Content) -> some View {
+        content
+            .font(.pTiny)
             .foregroundStyle(style.backgroundColor)
     }
 }

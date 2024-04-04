@@ -19,12 +19,8 @@ final class AddProductViewModel: ObservableObject {
     @Published var tax: String = ""
     @Published var images: [UIImage] = []
 
-    @Published var isNameEmpty = false
-    @Published var isTypeEmpty = false
-    @Published var isPriceEmpty = false
-
     var disableAddButton: Bool {
-        isNameEmpty || isTypeEmpty || isPriceEmpty
+        name.isEmpty || type.isEmpty || price.isEmpty
     }
 
     private var productService: ProductService!
@@ -32,7 +28,6 @@ final class AddProductViewModel: ObservableObject {
 
     init(_ productService: ProductService = ProductService()) {
         self.productService = productService
-        handleFields()
     }
 
     @MainActor
@@ -44,12 +39,6 @@ final class AddProductViewModel: ObservableObject {
                 Log.error(error)
             }
         }
-    }
-
-    private func handleFields() {
-        $name.isEmpty.assign(to: \.isNameEmpty, on: self).store(in: &cancellables)
-        $type.isEmpty.assign(to: \.isTypeEmpty, on: self).store(in: &cancellables)
-        $price.isEmpty.assign(to: \.isPriceEmpty, on: self).store(in: &cancellables)
     }
 
 }

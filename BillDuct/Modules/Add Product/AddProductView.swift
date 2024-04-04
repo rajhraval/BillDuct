@@ -17,17 +17,8 @@ struct AddProductView: View {
         NavigationStack {
             VStack {
                 TextField("Enter product name", text: $viewModel.name, axis: .vertical)
-                if viewModel.isNameEmpty {
-                    Text("Add empty")
-                }
                 TextField("Enter product type", text: $viewModel.type, axis: .vertical)
-                if viewModel.isTypeEmpty {
-                    Text("Add empty tye")
-                }
                 TextField("Enter product price", text: $viewModel.price, axis: .vertical).keyboardType(.decimalPad)
-                if viewModel.isPriceEmpty {
-                    Text("Add empty wwr")
-                }
                 TextField("Enter product tax", text: $viewModel.tax, axis: .vertical).keyboardType(.decimalPad)
                 if !viewModel.images.isEmpty {
                     HStack {
