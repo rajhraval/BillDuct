@@ -20,20 +20,31 @@ struct HomeView: View {
                 }
                 BDVStack(spacing: .regularThree) {
                     BDTextField(placeholder: "Search Products", text: $viewModel.searchText, isSearchEnabled: true)
-                    switch viewModel.loadingState {
-                    case .idle:
-                        ScrollView {
-                            BDVStack(spacing: .regularThree) {
-                                ForEach(viewModel.filteredProducts) { product in
-                                    HomeRowView(product: product)
+                    GeometryReader { geo in
+                        Group {
+                            switch viewModel.loadingState {
+                            case .idle:
+                                if !viewModel.filteredProducts.isEmpty {
+                                    ScrollView {
+                                        BDVStack(spacing: .regularThree) {
+                                            ForEach(viewModel.filteredProducts) { product in
+                                                HomeRowView(product: product)
+                                            }
+                                        }
+                                    }
+                                    .scrollIndicators(.hidden)
+                                } else {
+                                    EmptyStateView(configuration: .emptySearch)
+                                }
+                            case .loading:
+                                ProgressView()
+                            case .error(let type):
+                                EmptyStateView(configuration: .error(error: type)) {
+                                    viewModel.fetchProducts()
                                 }
                             }
                         }
-                        .scrollIndicators(.hidden)
-                    case .loading:
-                        ProgressView()
-                    case .error(let type):
-                        EmptyStateView(configuration: .error(error: type))
+                        .frame(width: geo.size.width, height: geo.size.height)
                     }
                 }
                 .customPadding(.horizontal, spacing: .medium)

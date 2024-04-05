@@ -39,10 +39,16 @@ final class AddProductViewModel: ObservableObject {
             do {
                 loadingState = .idle
                 productResponse = try await productService.addProduct(product)
-            } catch let error {
+            } catch let error as APIError {
                 loadingState = .error(type: error)
                 Log.error(error)
             }
+        }
+    }
+
+    func removeImage(_ image: UIImage) {
+        if let index = images.firstIndex(where: { $0 == image }) {
+            images.remove(at: index)
         }
     }
 

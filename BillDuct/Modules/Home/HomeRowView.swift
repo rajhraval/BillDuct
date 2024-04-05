@@ -24,27 +24,9 @@ struct HomeRowView: View {
                 }
             }
             BDVStack(spacing: .small) {
-                BDHStack {
-                    Text("Type")
-                        .font(.pTwo)
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                    Text(product.type).font(.pTwo)
-                }
-                BDHStack {
-                    Text("Selling Price")
-                        .font(.pTwo)
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                    Text("INR \(product.price.toString)").font(.pTwo)
-                }
-                BDHStack {
-                    Text("Tax Rate")
-                        .font(.pTwo)
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                    Text("\(product.tax.toString) %").font(.pTwo)
-                }
+                TitleSubtitleView(title: "Type", subTitle: product.type)
+                TitleSubtitleView(title: "Selling Price", subTitle: "INR \(product.price.toString)")
+                TitleSubtitleView(title: "Tax Rate", subTitle: "\(product.tax.toString) %")
             }
         }
         .customPadding(spacing: .regularThree)

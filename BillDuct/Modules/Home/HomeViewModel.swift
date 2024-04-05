@@ -33,7 +33,7 @@ final class HomeViewModel: ObservableObject {
             do {
                 loadingState = .idle
                 products = try await productService.getProducts()
-            } catch let error {
+            } catch let error as APIError {
                 loadingState = .error(type: error)
                 Log.error(error)
             }

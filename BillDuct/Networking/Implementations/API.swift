@@ -10,7 +10,7 @@ import Foundation
 enum LoadingState {
     case idle
     case loading
-    case error(type: Error)
+    case error(type: APIError)
 }
 
 protocol API {

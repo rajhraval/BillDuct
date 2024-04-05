@@ -19,3 +19,7 @@ struct ProductResponse: Identifiable, Codable {
         case product = "product_details"
     }
 }
+
+extension ProductResponse {
+    static var mockResponse = ProductResponse(id: 1, message: "Added", product: .mockProduct, success: true)
+}

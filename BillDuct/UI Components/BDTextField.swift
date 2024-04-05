@@ -21,7 +21,7 @@ struct BDTextField: View {
 
     var body: some View {
         ZStack(alignment: .trailing) {
-            TextField(placeholder, text: $text)
+            TextField(placeholder, text: $text, axis: .vertical)
                 .font(.pSmall())
                 .customPadding(spacing: .regularTwo)
                 .background(Color(UIColor.secondarySystemBackground))

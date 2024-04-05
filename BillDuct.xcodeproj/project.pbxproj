@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF00AA9A2BBFBD9200F50BFB /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00AA992BBFBD9200F50BFB /* ProductDetailView.swift */; };
+		CF00AA9B2BBFBD9200F50BFB /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00AA992BBFBD9200F50BFB /* ProductDetailView.swift */; };
+		CF00AA9D2BBFBE6C00F50BFB /* TitleSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00AA9C2BBFBE6C00F50BFB /* TitleSubtitleView.swift */; };
+		CF00AA9E2BBFBE6C00F50BFB /* TitleSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00AA9C2BBFBE6C00F50BFB /* TitleSubtitleView.swift */; };
 		CF2AA8032BBBDE0000D5E77A /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8022BBBDE0000D5E77A /* FontHelper.swift */; };
 		CF2AA8042BBBDE0000D5E77A /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8022BBBDE0000D5E77A /* FontHelper.swift */; };
 		CF2AA8092BBBDE3900D5E77A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2AA8052BBBDE3900D5E77A /* API.swift */; };
@@ -110,6 +114,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF00AA992BBFBD9200F50BFB /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		CF00AA9C2BBFBE6C00F50BFB /* TitleSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtitleView.swift; sourceTree = "<group>"; };
 		CF2AA8022BBBDE0000D5E77A /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		CF2AA8052BBBDE3900D5E77A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CF2AA8062BBBDE3900D5E77A /* APIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
@@ -282,6 +288,7 @@
 			children = (
 				CF2AA84B2BBC219B00D5E77A /* AddProductView.swift */,
 				CF2AA84F2BBC21B300D5E77A /* AddProductViewModel.swift */,
+				CF00AA992BBFBD9200F50BFB /* ProductDetailView.swift */,
 			);
 			path = "Add Product";
 			sourceTree = "<group>";
@@ -296,6 +303,7 @@
 				CF4C8FD12BBD374500D02293 /* BDCustomAlertSheet.swift */,
 				CF4C8FD52BBDA90700D02293 /* BDNavigationView.swift */,
 				CF4C8FD82BBE63A700D02293 /* EmptyStateView.swift */,
+				CF00AA9C2BBFBE6C00F50BFB /* TitleSubtitleView.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -498,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF00AA9D2BBFBE6C00F50BFB /* TitleSubtitleView.swift in Sources */,
 				CF2AA84C2BBC219B00D5E77A /* AddProductView.swift in Sources */,
 				CF3813792B664D21009AD64E /* Constants.swift in Sources */,
 				CF2AA8482BBC1EBF00D5E77A /* HomeViewModel.swift in Sources */,
@@ -527,6 +536,7 @@
 				CF2AA82A2BBC15E800D5E77A /* ProductData.swift in Sources */,
 				CF3813822B664D63009AD64E /* BillDuctModel.xcdatamodeld in Sources */,
 				CF3813712B664D06009AD64E /* CoreDataStack.swift in Sources */,
+				CF00AA9A2BBFBD9200F50BFB /* ProductDetailView.swift in Sources */,
 				CF2AA8262BBBFDFC00D5E77A /* ProductEndpoint.swift in Sources */,
 				CF4C8FCC2BBD337000D02293 /* Helper+Modifiers.swift in Sources */,
 				CF4C8FE22BBF0F8C00D02293 /* HomeRowView.swift in Sources */,
@@ -546,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF00AA9E2BBFBE6C00F50BFB /* TitleSubtitleView.swift in Sources */,
 				CF2AA84D2BBC219B00D5E77A /* AddProductView.swift in Sources */,
 				CF38137A2B664D21009AD64E /* Constants.swift in Sources */,
 				CF2AA8492BBC1EBF00D5E77A /* HomeViewModel.swift in Sources */,
@@ -575,6 +586,7 @@
 				CF4C8FCD2BBD337000D02293 /* Helper+Modifiers.swift in Sources */,
 				CF3813832B664D63009AD64E /* BillDuctModel.xcdatamodeld in Sources */,
 				CF3813722B664D06009AD64E /* CoreDataStack.swift in Sources */,
+				CF00AA9B2BBFBD9200F50BFB /* ProductDetailView.swift in Sources */,
 				CF4C8FCA2BBD326000D02293 /* Stacks.swift in Sources */,
 				CF2AA8272BBBFDFC00D5E77A /* ProductEndpoint.swift in Sources */,
 				CF4C8FE32BBF0F8C00D02293 /* HomeRowView.swift in Sources */,
