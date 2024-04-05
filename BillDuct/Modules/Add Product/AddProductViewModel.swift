@@ -12,13 +12,15 @@ import UIKit.UIImage
 final class AddProductViewModel: ObservableObject {
 
     @Published var productResponse: ProductResponse? = nil
-    @Published var loadingState: LoadingState = .loading
+    @Published var loadingState: LoadingState = .idle
 
     @Published var name: String = ""
     @Published var type: String = ""
     @Published var price: String = ""
     @Published var tax: String = ""
     @Published var images: [UIImage] = []
+
+    @Published var isLoading: Bool = false
 
     var disableAddButton: Bool {
         name.isEmpty || type.isEmpty || price.isEmpty
@@ -33,13 +35,17 @@ final class AddProductViewModel: ObservableObject {
 
     @MainActor
     func addProduct() {
+        isLoading = true
+        loadingState = .loading
         let imagesData = images.isEmpty ? nil : images.toPNGData
         let product = ProductData(name: name, type: type, price: price.toDouble, tax: tax.toDouble, images: imagesData)
         Task {
             do {
                 productResponse = try await productService.addProduct(product)
                 loadingState = .idle
+                isLoading = false
             } catch let error as APIError {
+                isLoading = false
                 loadingState = .error(type: error)
                 Log.error(error)
             }

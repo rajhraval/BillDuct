@@ -111,6 +111,8 @@
 		CF4C8FE02BBF007100D02293 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FDE2BBF007100D02293 /* UIImage+.swift */; };
 		CF4C8FE22BBF0F8C00D02293 /* HomeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FE12BBF0F8C00D02293 /* HomeRowView.swift */; };
 		CF4C8FE32BBF0F8C00D02293 /* HomeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4C8FE12BBF0F8C00D02293 /* HomeRowView.swift */; };
+		CFF876952BC039D300DD53FB /* BDErrorAlertSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF876942BC039D300DD53FB /* BDErrorAlertSheet.swift */; };
+		CFF876962BC039D300DD53FB /* BDErrorAlertSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF876942BC039D300DD53FB /* BDErrorAlertSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +174,7 @@
 		CF4C8FD82BBE63A700D02293 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		CF4C8FDE2BBF007100D02293 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		CF4C8FE12BBF0F8C00D02293 /* HomeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRowView.swift; sourceTree = "<group>"; };
+		CFF876942BC039D300DD53FB /* BDErrorAlertSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDErrorAlertSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +307,7 @@
 				CF4C8FD52BBDA90700D02293 /* BDNavigationView.swift */,
 				CF4C8FD82BBE63A700D02293 /* EmptyStateView.swift */,
 				CF00AA9C2BBFBE6C00F50BFB /* TitleSubtitleView.swift */,
+				CFF876942BC039D300DD53FB /* BDErrorAlertSheet.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -513,6 +517,7 @@
 				CF3C77012BBD25AC005E2D74 /* Button+Modifiers.swift in Sources */,
 				CF3C76FE2BBD2593005E2D74 /* BDButton.swift in Sources */,
 				CF4C8FD22BBD374500D02293 /* BDCustomAlertSheet.swift in Sources */,
+				CFF876952BC039D300DD53FB /* BDErrorAlertSheet.swift in Sources */,
 				CF2AA8592BBC62F000D5E77A /* ImagePicker.swift in Sources */,
 				CF2AA8442BBC1D6400D5E77A /* Double+.swift in Sources */,
 				CF2AA8562BBC5EDF00D5E77A /* Publisher+.swift in Sources */,
@@ -563,6 +568,7 @@
 				CF3C77022BBD25AC005E2D74 /* Button+Modifiers.swift in Sources */,
 				CF3C76FF2BBD2593005E2D74 /* BDButton.swift in Sources */,
 				CF2AA85A2BBC62F000D5E77A /* ImagePicker.swift in Sources */,
+				CFF876962BC039D300DD53FB /* BDErrorAlertSheet.swift in Sources */,
 				CF2AA8452BBC1D6400D5E77A /* Double+.swift in Sources */,
 				CF2AA8572BBC5EDF00D5E77A /* Publisher+.swift in Sources */,
 				CF2AA80C2BBBDE3900D5E77A /* APIEndpoint.swift in Sources */,

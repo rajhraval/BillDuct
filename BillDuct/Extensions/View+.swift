@@ -72,5 +72,10 @@ extension View {
         UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
     }
 
+    // MARK: Alert Sheet
+    func alertSheet() -> some View {
+        modifier(AlertSheetModifier())
+    }
+
 
 }

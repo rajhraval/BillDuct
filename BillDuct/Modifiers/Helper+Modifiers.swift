@@ -77,3 +77,18 @@ struct WidthSpacingModifier: ViewModifier {
             .frame(width: spacing.spacing)
     }
 }
+
+struct AlertSheetModifier: ViewModifier {
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    func body(content: Content) -> some View {
+        let color: Color = colorScheme == .dark ? .white : .black
+        content
+            .background(.background)
+            .roundedCorners(27)
+            .customPadding(spacing: .regularThree)
+            .shadow(color: color.opacity(0.1), radius: 10, y: -4)
+            .zIndex(3)
+    }
+}

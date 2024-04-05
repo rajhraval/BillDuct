@@ -10,14 +10,16 @@ import SwiftUI
 struct AddProductView: View {
 
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
 
     @StateObject private var viewModel = AddProductViewModel()
 
     @State private var showPhotoPicker = false
+    @State private var y: CGFloat = 0
 
     private var imagesStackView: some View {
-        ForEach(viewModel.images, id: \.self) { image in
-            HStack {
+        HStack {
+            ForEach(viewModel.images, id: \.self) { image in
                 ZStack(alignment: .topTrailing) {
                     Image(uiImage: image)
                         .resizable()
@@ -25,85 +27,90 @@ struct AddProductView: View {
                         .size(.extraLarge)
                         .defaultCornerRadius()
                     BDButton(systemName: "xmark.circle.fill") {
-                        withAnimation {
+                        withAnimation(.bouncy) {
                             viewModel.removeImage(image)
                         }
                     }
                     .symbolTextButtonStyle(.primary)
                     .customPadding([.top, .trailing], spacing: .custom(value: -4))
+                    .background(Color.white.clipShape(.circle).font(.pTiny).customPadding([.top, .trailing], spacing: .custom(value: -4)))
                 }
-                Spacer()
             }
+            Spacer()
         }
+        .frame(maxWidth: .infinity)
+    }
+
+    private var transculentView: some View {
+        let color: Color = colorScheme == .dark ? .white : .black
+        return color.opacity(0.2).ignoresSafeArea().zIndex(2)
     }
 
     var body: some View {
         NavigationStack {
-            ZStack(alignment: .bottom) {
-                if let _ = viewModel.productResponse {
-                    Color.white.opacity(0.2).ignoresSafeArea()
-                }
-                BDVStack(spacing: .regularOne) {
-                    BDHStack {
-                        BDButton(systemName: "xmark") {
-                            dismiss()
-                        }
-                        .symbolButtonStyle(.primary)
-                        Spacer()
+            GeometryReader { geo in
+                ZStack(alignment: .bottom) {
+                    if let _ = viewModel.productResponse {
+                        transculentView
+                    } else if viewModel.isLoading {
+                        transculentView
                     }
-                    .customPadding(.top, spacing: .medium)
-                    ScrollView {
-                        BDVStack(spacing: .regularThree) {
-                            BDNavigationView(title: "Add Product")
-                                .customPadding([.horizontal, .top], spacing: .custom(value: -24))
+                    BDVStack(spacing: .regularOne) {
+                        BDHStack {
+                            BDButton(systemName: "xmark") {
+                                dismiss()
+                            }
+                            .symbolButtonStyle(.primary)
+                            Spacer()
+                        }
+                        .customPadding(.top, spacing: .medium)
+                        ScrollView {
                             BDVStack(spacing: .regularThree) {
-                                BDSection(title: "Name") {
-                                    BDTextField(placeholder: "Enter product name", text: $viewModel.name)
-                                }
-                                BDSection(title: "Type") {
-                                    BDTextField(placeholder: "Enter product type", text: $viewModel.type)
-                                }
-                                BDSection(title: "Selling Price") {
-                                    BDTextField(placeholder: "Enter product price", text: $viewModel.price)
-                                }
-                                BDSection(title: "Tax Rate") {
-                                    BDTextField(placeholder: "Enter product tax rate", text: $viewModel.tax)
-                                }
-                                if viewModel.images.isEmpty {
-                                    Spacer()
-                                } else {
-                                    BDSection(title: "Images") {
-                                        imagesStackView
+                                BDNavigationView(title: "Add Product")
+                                    .customPadding([.horizontal, .top], spacing: .custom(value: -24))
+                                BDVStack(spacing: .regularThree) {
+                                    BDSection(title: "Name") {
+                                        BDTextField(placeholder: "Enter product name", text: $viewModel.name)
+                                    }
+                                    BDSection(title: "Type") {
+                                        BDTextField(placeholder: "Enter product type", text: $viewModel.type)
+                                    }
+                                    BDSection(title: "Selling Price") {
+                                        BDTextField(placeholder: "Enter product price", text: $viewModel.price).keyboardType(.decimalPad)
+                                    }
+                                    BDSection(title: "Tax Rate") {
+                                        BDTextField(placeholder: "Enter product tax rate", text: $viewModel.tax).keyboardType(.decimalPad)
+                                    }
+                                    if viewModel.images.isEmpty {
+                                        Spacer()
+                                    } else {
+                                        BDSection(title: "Images") {
+                                            imagesStackView
+                                        }
                                     }
                                 }
                             }
                         }
+                        .scrollIndicators(.hidden)
+                        .disabled(viewModel.productResponse == nil ? false : true)
+                        BDButton("Upload Images") {
+                            showPhotoPicker.toggle()
+                        }
+                        .regularButtonStyle(.secondary)
+                        BDButton("Add") {
+                            viewModel.addProduct()
+                        }
+                        .regularButtonStyle(viewModel.disableAddButton ? .disabled : .primary)
+                        .disabled(viewModel.disableAddButton)
+                        Spacer()
                     }
-                    .scrollIndicators(.hidden)
-                    .disabled(viewModel.productResponse == nil ? false : true)
-                    BDButton("Upload Images") {
-                        showPhotoPicker.toggle()
-                    }
-                    .regularButtonStyle(.secondary)
-                    BDButton("Add") {
-                        viewModel.addProduct()
-                    }
-                    .regularButtonStyle(viewModel.disableAddButton ? .disabled : .primary)
-                    .disabled(viewModel.disableAddButton)
-                    Spacer()
+                    .customPadding(.horizontal, spacing: .medium)
+                    showalertView(geo)
                 }
-                .customPadding(.horizontal, spacing: .medium)
-                if let response = viewModel.productResponse {
-                    BDCustomAlertSheet(systemName: "checkmark.circle.fill", title: "Product Added") {
-                        ProductDetailView(response: response)
-                    } dismissAction: {
-                        viewModel.resetValues()
+                .onAppear {
+                    withAnimation(.bouncy) {
+                        y = geo.frame(in: .global).midY - geo.size.height / 2
                     }
-                    .background(.background)
-                    .roundedCorners(27)
-                    .customPadding(spacing: .regularThree)
-                    .shadow(color: .white.opacity(0.1), radius: 10, y: -4)
-                    .zIndex(2)
                 }
             }
         }
@@ -114,27 +121,40 @@ struct AddProductView: View {
             ImagePicker(images: $viewModel.images)
         }
     }
+
+    func showalertView(_ geo: GeometryProxy) -> some View {
+        return Group {
+            switch viewModel.loadingState {
+            case .loading:
+                ProgressView()
+                    .size(.extraLarge)
+                    .alertSheet()
+                    .position(x: Constants.Screen.halfScreenWidth, y: Constants.Screen.halfScreenHeight)
+            case .error(let error):
+                BDErrorAlertSheet(error: error) {
+                    viewModel.loadingState = .idle
+                    y = 0
+                }
+                .alertSheet()
+                .offset(y: y)
+                .transition(.move(edge: .top))
+            default:
+                EmptyView()
+            }
+            if let response = viewModel.productResponse {
+                BDCustomAlertSheet(systemName: "checkmark.circle.fill", title: "Product Added") {
+                    ProductDetailView(response: response)
+                } dismissAction: {
+                    viewModel.resetValues()
+                }
+                .alertSheet()
+                .offset(y: y)
+                .transition(.move(edge: .top))
+            }
+        }
+    }
 }
 
 #Preview {
     AddProductView()
 }
-
-//
-//BDVStack(spacing: .medium) {
-//    BDNavigationView(title: "Add Product", backButtonRole: .dismiss)
-//    GeometryReader { geo in
-//        ZStack(alignment: .bottom) {
-//            ScrollView {
-
-//                .frame(height: geo.size.height)
-//            }
-//            .scrollIndicators(.hidden)
-//            Color.black.ignoresSafeArea()
-//                .frame(height: -geo.size.height)
-//                .padding(-24)
-
-//        }
-//        .customPadding(.horizontal, spacing: .medium)
-//    }
-//}

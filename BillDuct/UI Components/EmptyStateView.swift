@@ -9,18 +9,15 @@ import SwiftUI
 
 enum EmptyStateConfiguration {
     case add
-    case internetConnection
     case emptySearch
-    case error(error: Error)
+    case error(error: APIError)
 
     var title: String {
         switch self {
-        case .internetConnection:
-            return "No Internet Connection"
         case .emptySearch:
             return "No Results Found"
-        case .error(_):
-            return "Unknown Error"
+        case .error(let error):
+            return error.title
         case .add:
             return "It's Empty"
         }
@@ -28,12 +25,10 @@ enum EmptyStateConfiguration {
 
     var subtitle: String {
         switch self {
-        case .internetConnection:
-            return "Check your connection"
         case .emptySearch:
             return "Try again"
         case .error(let error):
-            return "\(error.localizedDescription)"
+            return error.description
         case .add:
             return "Time to add one."
         }
@@ -41,12 +36,10 @@ enum EmptyStateConfiguration {
 
     var systemName: String {
         switch self {
-        case .internetConnection:
-            return "wifi.slash"
         case .emptySearch:
             return "magnifyingglass"
-        case .error(_):
-            return "pc"
+        case .error(let error):
+            return error.image
         case .add:
             return "cart.fill"
         }
@@ -54,7 +47,7 @@ enum EmptyStateConfiguration {
 
     var action: Bool {
         switch self {
-        case .internetConnection, .error(_), .add:
+        case .error(_), .add:
             return true
         case .emptySearch:
             return false
@@ -65,7 +58,7 @@ enum EmptyStateConfiguration {
         switch self {
         case .add:
             return "Add"
-        case .internetConnection, .error(_):
+        case .error(_):
             return "Refresh"
         default:
             return ""
@@ -76,7 +69,7 @@ enum EmptyStateConfiguration {
         switch self {
         case .add:
             return "plus"
-        case .internetConnection, .error(_):
+        case .error(_):
             return "arrow.clockwise.circle.fill"
         default:
             return ""
