@@ -22,8 +22,9 @@ struct BDTextField: View {
     var body: some View {
         ZStack(alignment: .trailing) {
             TextField(placeholder, text: $text, axis: .vertical)
+                .height(.medium)
                 .font(.pSmall())
-                .customPadding(spacing: .regularTwo)
+                .customPadding(.horizontal, spacing: .regularTwo)
                 .background(Color(UIColor.secondarySystemBackground))
                 .defaultCornerRadius()
             if isSearchEnabled && !text.isEmpty {

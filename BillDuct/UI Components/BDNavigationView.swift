@@ -80,7 +80,7 @@ struct BDNavigationView: View {
             }
         }
         .customPadding(.horizontal, spacing: .medium)
-        .frame(maxHeight: 96)
+        .frame(minHeight: 72, maxHeight: 96)
     }
 }
 

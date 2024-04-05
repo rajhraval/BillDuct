@@ -31,8 +31,8 @@ final class HomeViewModel: ObservableObject {
     func fetchProducts() {
         Task {
             do {
-                loadingState = .idle
                 products = try await productService.getProducts()
+                loadingState = .idle
             } catch let error as APIError {
                 loadingState = .error(type: error)
                 Log.error(error)

@@ -11,11 +11,12 @@ enum BDButtonStyle {
     case primary
     case secondary
     case destructive
+    case disabled
     case custom(color: Color)
 
     var textColor: Color {
         switch self {
-        case .primary, .destructive:
+        case .primary, .destructive, .disabled:
             return .white
         case .secondary:
             return .swipePrimary
@@ -32,6 +33,8 @@ enum BDButtonStyle {
             return .swipeSecondary
         case .destructive:
             return .red
+        case .disabled:
+            return .gray
         case .custom(let color):
             return color
         }

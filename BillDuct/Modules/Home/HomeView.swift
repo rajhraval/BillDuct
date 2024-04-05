@@ -48,9 +48,12 @@ struct HomeView: View {
                     }
                 }
                 .customPadding(.horizontal, spacing: .medium)
-                Spacer()
+                .ignoresSafeArea(.container, edges: .bottom)
             }
             .ignoresSafeArea(.container, edges: .bottom)
+        }
+        .onTapGesture {
+            hideKeyboard()
         }
         .onAppear {
             viewModel.fetchProducts()
@@ -67,7 +70,7 @@ struct HomeView: View {
 
 /*
 
-TODO:  CACHING IMAGE AND API RESPONSE FOR 2 MINUTES, 1:1 Image Resolution
+TODO:  CACHING IMAGE AND API RESPONSE FOR 2 MINUTES, 1:1 Image Resolution viewing
 
 GeometryReader { geo in
     ZStack(alignment: .bottom) {

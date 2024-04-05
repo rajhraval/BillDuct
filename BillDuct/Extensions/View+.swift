@@ -65,5 +65,12 @@ extension View {
         modifier(ChipButtonStyle(style: style))
     }
 
+    // MARK: Keyboard
+
+    func hideKeyboard() {
+        let resign = #selector(UIResponder.resignFirstResponder)
+        UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
+    }
+
 
 }

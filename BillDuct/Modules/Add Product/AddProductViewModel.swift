@@ -11,7 +11,7 @@ import UIKit.UIImage
 
 final class AddProductViewModel: ObservableObject {
 
-    @Published var productResponse: ProductResponse?
+    @Published var productResponse: ProductResponse? = nil
     @Published var loadingState: LoadingState = .loading
 
     @Published var name: String = ""
@@ -37,8 +37,8 @@ final class AddProductViewModel: ObservableObject {
         let product = ProductData(name: name, type: type, price: price.toDouble, tax: tax.toDouble, images: imagesData)
         Task {
             do {
-                loadingState = .idle
                 productResponse = try await productService.addProduct(product)
+                loadingState = .idle
             } catch let error as APIError {
                 loadingState = .error(type: error)
                 Log.error(error)
@@ -50,6 +50,15 @@ final class AddProductViewModel: ObservableObject {
         if let index = images.firstIndex(where: { $0 == image }) {
             images.remove(at: index)
         }
+    }
+
+    func resetValues() {
+        name = ""
+        type = ""
+        price = ""
+        tax = ""
+        images = []
+        productResponse = nil
     }
 
 }
