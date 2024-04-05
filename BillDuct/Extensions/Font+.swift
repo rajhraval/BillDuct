@@ -25,12 +25,14 @@ extension Font {
     static var pLarge = customFont(weight: .extraBold, size: .pLarge)
     /// Bold, 18
     static var p = customFont(weight: .bold, size: .p)
+    /// Bold, 14
+    static var pTwo = customFont(weight: .bold, size: .pTwo)
     /// Bold, 16
     static func pSmall(isBold: Bool = false) -> Font { customFont(weight: isBold ? .bold : .semiBold, size: .pSmall) }
     /// Bold, 12
-    static var pTiny = customFont(weight: .bold, size: .pSmall)
+    static var pTiny = customFont(weight: .medium, size: .pSmall)
     /// Heavy, 18
-    static var symbol: Font = .system(size: 18, weight: .heavy)
+    static var symbol: Font = .system(size: 28, weight: .semibold)
 
 }
 

@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct BillDuctApp: App {
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
                 .environment(\.managedObjectContext, CoreDataStack.shared.viewContext)
         }
     }

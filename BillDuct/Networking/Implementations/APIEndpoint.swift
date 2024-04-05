@@ -25,7 +25,8 @@ enum HTTPRequestMethod: String {
 }
 
 enum MockEndpoint: Endpoint {
-    case mockTest
+    case mockGetTest
+    case mockPostTest(data: MultiformData)
 
     var baseURL: URL {
         guard let url = URL(string: "http://www.boredapi.com/api/") else {
@@ -36,13 +37,17 @@ enum MockEndpoint: Endpoint {
 
     var path: String {
         switch self {
-        case .mockTest:
+        case .mockGetTest:
+            return ""
+        case .mockPostTest(_):
             return ""
         }
     }
 
     var headers: [String : String]? {
         switch self {
+        case .mockPostTest(let data):
+            return data.header
         default:
             return nil
         }
@@ -50,14 +55,16 @@ enum MockEndpoint: Endpoint {
 
     var method: HTTPRequestMethod {
         switch self {
-        case .mockTest:
+        case .mockGetTest:
             return .get
+        case .mockPostTest:
+            return .post
         }
     }
 
     var queryItems: [URLQueryItem]? {
         switch self {
-        case .mockTest:
+        default:
             return nil
         }
     }
@@ -72,7 +79,12 @@ enum MockEndpoint: Endpoint {
     }
 
     var body: Data? {
-        return nil
+        switch self {
+        case .mockPostTest(let data):
+            return data.body
+        default:
+            return nil
+        }
     }
 }
 

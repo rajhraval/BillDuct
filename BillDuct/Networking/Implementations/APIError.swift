@@ -11,4 +11,32 @@ enum APIError: Error {
     case invalidURLError
     case networkingError(error: Error)
     case decodingError(error: Error)
+    case internetError
+
+    var title: String {
+        switch self {
+        case .internetError:
+            return "Connection Failed"
+        default:
+            return "Something's Wrong"
+        }
+    }
+
+    var description: String {
+        switch self {
+        case .internetError:
+            return "Check your connection."
+        default:
+            return "Try again later."
+        }
+    }
+
+    var image: String {
+        switch self {
+        case .internetError:
+            return "wifi.slash"
+        default:
+            return "pc"
+        }
+    }
 }

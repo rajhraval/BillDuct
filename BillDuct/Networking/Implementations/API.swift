@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum LoadingState {
+    case idle
+    case loading
+    case error(type: APIError)
+}
+
 protocol API {
     func request<T: Codable>(_ endpoint: Endpoint) async throws -> T
 }
@@ -24,7 +30,6 @@ extension API {
         }
 
         guard let url = urlComponents.url else {
-            print("Failed to construct final URL.")
             throw APIError.invalidURLError
         }
 
@@ -45,6 +50,8 @@ extension API {
             
             let decodedResponse = try JSONDecoder().decode(T.self, from: data)
             return decodedResponse
+        } catch let error as URLError where error.code == .notConnectedToInternet || error.code == .networkConnectionLost {
+            throw APIError.internetError
         } catch let error {
             throw APIError.decodingError(error: error)
         }
