@@ -63,7 +63,29 @@ struct AddProductView: View {
                                         BDTextField(placeholder: "Enter product name", text: $viewModel.name)
                                     }
                                     BDSection(title: "Type") {
-                                        BDTextField(placeholder: "Enter product type", text: $viewModel.type)
+                                        Menu {
+                                            ForEach(viewModel.productOptions) { option in
+                                                Button {
+                                                    viewModel.type = option.display
+                                                } label: {
+                                                    Text(option.display)
+                                                }
+                                                .buttonStyle(.plain)
+                                            }
+                                        } label: {
+                                            HStack {
+                                                Text(viewModel.type)
+                                                    .height(.medium)
+                                                    .font(.pSmall())
+                                                    .customPadding(.horizontal, spacing: .regularTwo)
+                                                Spacer()
+                                            }
+                                            .frame(maxWidth: .infinity)
+                                            .background(Color(UIColor.secondarySystemBackground))
+                                            .defaultCornerRadius()
+                                            .multilineTextAlignment(.leading)
+                                        }
+                                        .foregroundStyle(viewModel.isProductSelected ? .primary : .tertiary)
                                     }
                                     BDSection(title: "Selling Price") {
                                         BDTextField(placeholder: "Enter product price", text: $viewModel.price).keyboardType(.decimalPad)

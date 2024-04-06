@@ -14,8 +14,10 @@ final class AddProductViewModel: ObservableObject {
     @Published var productResponse: ProductResponse? = nil
     @Published var loadingState: LoadingState = .idle
 
+    @Published var productOptions: [ProductType] = ProductType.allCases
+
     @Published var name: String = ""
-    @Published var type: String = ""
+    @Published var type: String = "Select Product"
     @Published var price: String = ""
     @Published var tax: String = ""
     @Published var image: UIImage? = nil
@@ -23,7 +25,11 @@ final class AddProductViewModel: ObservableObject {
     @Published var isLoading: Bool = false
 
     var disableAddButton: Bool {
-        name.isEmpty || type.isEmpty || price.isEmpty
+        name.isEmpty || type == "Select Product" || price.isEmpty
+    }
+
+    var isProductSelected: Bool {
+        type != "Select Product"
     }
 
     private var productService: ProductService!
@@ -54,7 +60,7 @@ final class AddProductViewModel: ObservableObject {
 
     func resetValues() {
         name = ""
-        type = ""
+        type = "Select Product"
         price = ""
         tax = ""
         image = nil

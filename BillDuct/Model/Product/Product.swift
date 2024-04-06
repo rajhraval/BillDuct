@@ -35,6 +35,27 @@ struct Product: Identifiable, Codable {
     }
 }
 
+enum ProductType: String, Identifiable, CaseIterable {
+    case digitalItem
+    case physicalItem
+    case deliveryItem
+
+    var display: String {
+        switch self {
+        case .digitalItem:
+            return "Digital Item"
+        case .physicalItem:
+            return "Physical Item"
+        case .deliveryItem:
+            return "Delivery Item"
+        }
+    }
+
+    var id: Self {
+        return self
+    }
+}
+
 extension Product {
 
     static var mockProduct = Product(name: "My Product", type: "ABC", image: "", price: 25.67, tax: 1.345)
