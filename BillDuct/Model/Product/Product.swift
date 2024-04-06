@@ -26,12 +26,7 @@ struct Product: Identifiable, Codable {
         guard let url = URL(string: image) else {
             return Image(.placeholder).resizable().scaledToFit().size(.medium)
         }
-        return AsyncImage(url: url) { image in
-            image.resizable().scaledToFill().size(.medium).defaultCornerRadius().clipped()
-        } placeholder: {
-            ProgressView()
-                .size(.medium)
-        }
+        return BDAsyncImage(url: image).size(.medium).defaultCornerRadius().clipped()
     }
 }
 

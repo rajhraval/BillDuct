@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit.UIImage
 
 enum LoadingState {
     case idle
@@ -14,6 +15,7 @@ enum LoadingState {
 }
 
 protocol API {
+    func requestImage(from url: URL) async throws -> UIImage?
     func request<T: Codable>(_ endpoint: Endpoint) async throws -> T
 }
 
@@ -53,6 +55,23 @@ extension API {
             
             let decodedResponse = try JSONDecoder().decode(T.self, from: data)
             return decodedResponse
+        } catch let error as URLError where error.code == .notConnectedToInternet || error.code == .networkConnectionLost {
+            throw APIError.internetError
+        } catch let error as URLError where error.code == .cannotDecodeRawData {
+            throw APIError.decodingError(error: error)
+        } catch let error {
+            throw APIError.unknownError(error: error)
+        }
+    }
+
+    func requestImage(from url: URL) async throws -> UIImage? {
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
+
+            guard let httpResponse = response as? HTTPURLResponse else {
+                throw APIError.networkingError(error: NSError(domain: "HTTP Error", code: (response as? HTTPURLResponse)?.statusCode ?? 500, userInfo: nil))
+            }
+            return UIImage(data: data)
         } catch let error as URLError where error.code == .notConnectedToInternet || error.code == .networkConnectionLost {
             throw APIError.internetError
         } catch let error as URLError where error.code == .cannotDecodeRawData {
