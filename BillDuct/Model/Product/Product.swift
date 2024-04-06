@@ -26,7 +26,12 @@ struct Product: Identifiable, Codable {
         guard let url = URL(string: image) else {
             return Image(.placeholder).resizable().scaledToFit().size(.medium)
         }
-        return BDAsyncImage(url: image).size(.medium).defaultCornerRadius().clipped()
+
+        return AsyncImage(url: url, content: { image in
+            image.resizable().scaledToFill().size(.medium).defaultCornerRadius().clipped()
+        }, placeholder: {
+            ProgressView()
+        })
     }
 }
 
@@ -53,6 +58,8 @@ enum ProductType: String, Identifiable, CaseIterable {
 
 extension Product {
 
-    static var mockProduct = Product(name: "My Product", type: "ABC", image: "", price: 25.67, tax: 1.345)
+    static var mockProduct = Product(name: "My Product", type: "ABC", image: exampleImage, price: 25.67, tax: 1.345)
 
 }
+
+let exampleImage = "https://vx-erp-product-images.s3.ap-south-1.amazonaws.com/9_1712255073_0_Screenshot_2024-03-29_at_2.14.52_PM.png"
