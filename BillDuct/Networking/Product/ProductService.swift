@@ -19,10 +19,8 @@ final class ProductService: API {
         data.addText(key: "product_type", value: product.type)
         data.addText(key: "price", value: product.price.toString)
         data.addText(key: "tax", value: product.tax.toString)
-        if let images = product.images {
-            for image in images {
-                data.addFile(key: "files", fileName: "\(product.name)-\(UUID().uuidString)", fileData: image)
-            }
+        if let image = product.image {
+            data.addFile(key: "files[]", fileName: "\(product.name)-\(UUID().uuidString)", fileData: image)
         }
         return try await request(ProductEndpoint.addProduct(requestData: data)) as ProductResponse
     }

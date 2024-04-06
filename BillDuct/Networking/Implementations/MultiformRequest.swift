@@ -79,8 +79,8 @@ struct MultiformRequest: MultiformData {
         fileData: Data
     ) {
         appendBoundarySeparator()
-        data.append(disposition(key) + "; filename=\"\(fileName)\"" + separator)
-        data.append("Content-Type: \(fileMimeType.rawValue)" + separator + separator)
+        data.append(disposition(key) + "; filename=\"\(fileName).\(fileMimeType.rawValue)\"" + separator)
+        data.append("Content-Type: \(fileMimeType.value)" + separator + separator)
         data.append(fileData)
         appendSeparator()
     }

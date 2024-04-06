@@ -19,22 +19,12 @@ struct AddProductView: View {
 
     private var imagesStackView: some View {
         HStack {
-            ForEach(viewModel.images, id: \.self) { image in
-                ZStack(alignment: .topTrailing) {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFill()
-                        .size(.extraLarge)
-                        .defaultCornerRadius()
-                    BDButton(systemName: "xmark.circle.fill") {
-                        withAnimation(.bouncy) {
-                            viewModel.removeImage(image)
-                        }
-                    }
-                    .symbolTextButtonStyle(.primary)
-                    .customPadding([.top, .trailing], spacing: .custom(value: -4))
-                    .background(Color.white.clipShape(.circle).font(.pTiny).customPadding([.top, .trailing], spacing: .custom(value: -4)))
-                }
+            if let image = viewModel.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+                    .size(.extraLarge)
+                    .defaultCornerRadius()
             }
             Spacer()
         }
@@ -81,12 +71,12 @@ struct AddProductView: View {
                                     BDSection(title: "Tax Rate") {
                                         BDTextField(placeholder: "Enter product tax rate", text: $viewModel.tax).keyboardType(.decimalPad)
                                     }
-                                    if viewModel.images.isEmpty {
-                                        Spacer()
-                                    } else {
-                                        BDSection(title: "Images") {
+                                    if let _ = viewModel.image {
+                                        BDSection(title: "Image") {
                                             imagesStackView
                                         }
+                                    } else {
+                                        Spacer()
                                     }
                                 }
                             }
@@ -118,7 +108,7 @@ struct AddProductView: View {
             hideKeyboard()
         }
         .sheet(isPresented: $showPhotoPicker) {
-            ImagePicker(images: $viewModel.images)
+            ImagePicker(image: $viewModel.image)
         }
     }
 

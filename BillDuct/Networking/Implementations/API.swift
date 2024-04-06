@@ -55,8 +55,10 @@ extension API {
             return decodedResponse
         } catch let error as URLError where error.code == .notConnectedToInternet || error.code == .networkConnectionLost {
             throw APIError.internetError
-        } catch let error {
+        } catch let error as URLError where error.code == .cannotDecodeRawData {
             throw APIError.decodingError(error: error)
+        } catch let error {
+            throw APIError.unknownError(error: error)
         }
     }
 
@@ -67,6 +69,9 @@ extension API {
         Log.info("REQUEST METHOD: \(endpoint.method.rawValue)")
         if let headers = endpoint.headers {
             Log.info("REQUEST HEADERS: [\(headers)]")
+        }
+        if let body = endpoint.body {
+            Log.info("REQUEST BODY: [\(body.prettyPrintToJSON)]")
         }
         if let parameters = endpoint.queryItems {
             Log.info("REQUEST QUERY PARAMETERS: [\(parameters)]")

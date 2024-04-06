@@ -18,7 +18,7 @@ final class AddProductViewModel: ObservableObject {
     @Published var type: String = ""
     @Published var price: String = ""
     @Published var tax: String = ""
-    @Published var images: [UIImage] = []
+    @Published var image: UIImage? = nil
 
     @Published var isLoading: Bool = false
 
@@ -37,8 +37,8 @@ final class AddProductViewModel: ObservableObject {
     func addProduct() {
         isLoading = true
         loadingState = .loading
-        let imagesData = images.isEmpty ? nil : images.toPNGData
-        let product = ProductData(name: name, type: type, price: price.toDouble, tax: tax.toDouble, images: imagesData)
+        let imagesData = image == nil ? nil : image!.pngData()
+        let product = ProductData(name: name, type: type, price: price.toDouble, tax: tax.toDouble, image: imagesData)
         Task {
             do {
                 productResponse = try await productService.addProduct(product)
@@ -52,18 +52,12 @@ final class AddProductViewModel: ObservableObject {
         }
     }
 
-    func removeImage(_ image: UIImage) {
-        if let index = images.firstIndex(where: { $0 == image }) {
-            images.remove(at: index)
-        }
-    }
-
     func resetValues() {
         name = ""
         type = ""
         price = ""
         tax = ""
-        images = []
+        image = nil
         productResponse = nil
     }
 

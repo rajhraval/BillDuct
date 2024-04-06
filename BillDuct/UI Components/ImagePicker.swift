@@ -10,8 +10,8 @@ import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
 
-    @Binding var images: [UIImage]
-    var selectionLimit = 2
+    @Binding var image: UIImage?
+    var selectionLimit = 1
 
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var configuration = PHPickerConfiguration()
@@ -39,12 +39,12 @@ struct ImagePicker: UIViewControllerRepresentable {
         }
 
         func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-            parent.images = []
+            parent.image = nil
             for result in results {
                 result.itemProvider.loadObject(ofClass: UIImage.self) { (object, error) in
                     if let image = object as? UIImage {
                         DispatchQueue.main.async {
-                            self.parent.images.append(image)
+                            self.parent.image = image
                         }
                     }
                 }

@@ -12,14 +12,14 @@ struct ProductData: Codable {
     let type: String
     let price: Double
     let tax: Double
-    let images: [Data]?
+    let image: Data?
 
-    init(name: String, type: String, price: Double, tax: Double, images: [Data]? = nil) {
+    init(name: String, type: String, price: Double, tax: Double, image: Data? = nil) {
         self.name = name
         self.type = type
         self.price = price
         self.tax = tax
-        self.images = images
+        self.image = image
     }
 }
 

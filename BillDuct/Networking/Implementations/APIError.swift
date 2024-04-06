@@ -12,6 +12,7 @@ enum APIError: Error {
     case networkingError(error: Error)
     case decodingError(error: Error)
     case internetError
+    case unknownError(error: Error)
 
     var title: String {
         switch self {

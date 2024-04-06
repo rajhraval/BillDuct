@@ -18,3 +18,12 @@ extension [UIImage] {
     }
 
 }
+
+extension UIImage {
+    var toPNGData: Data {
+        guard let data = self.pngData() else {
+            return Data()
+        }
+        return data
+    }
+}
