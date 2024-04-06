@@ -1,6 +1,6 @@
 # BillDuct
 
-![BillDuct-Image 001](https://github.com/rajhraval/BillDuct/assets/35184001/5dc362e4-ffb5-4508-9a8b-c16a32e118cf)
+![BillDuct-Image 001](https://github.com/rajhraval/BillDuct/assets/35184001/2d12d7e8-5e00-4c9c-9b27-d82baa62e1fc)
 
 ## Information
 
