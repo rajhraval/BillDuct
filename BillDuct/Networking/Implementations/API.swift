@@ -40,6 +40,8 @@ extension API {
             request.httpBody = endpoint.body
         }
 
+        logRequest(for: url, endpoint: endpoint)
+
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
 
@@ -47,6 +49,8 @@ extension API {
                   httpResponse.statusCode == 200 else {
                 throw APIError.networkingError(error: NSError(domain: "HTTP Error", code: (response as? HTTPURLResponse)?.statusCode ?? 500, userInfo: nil))
             }
+
+            logResponse(for: httpResponse, data: data)
             
             let decodedResponse = try JSONDecoder().decode(T.self, from: data)
             return decodedResponse
@@ -56,4 +60,25 @@ extension API {
             throw APIError.decodingError(error: error)
         }
     }
+
+    private func logRequest(for url: URL, endpoint: Endpoint) {
+        Log.info("⬆️ API REQUEST")
+        Log.info("REQUEST URL: \(url)")
+        Log.info("REQUEST METHOD: \(endpoint.method.rawValue)")
+        if let headers = endpoint.headers {
+            Log.info("REQUEST HEADERS: [\(headers)]")
+        }
+        if let parameters = endpoint.queryItems {
+            Log.info("REQUEST QUERY PARAMETERS: [\(parameters)]")
+        }
+    }
+
+    private func logResponse(for httpResponse: HTTPURLResponse, data: Data) {
+        Log.info("⬇️ API RESPONSE")
+        Log.info("RESPONSE: \(httpResponse)")
+        Log.info("RESPONSE CODE: \(httpResponse.statusCode)")
+        Log.info("RESPONSE HEADERS: \(httpResponse.allHeaderFields)")
+        Log.info("RESPONSE BODY: \(data.prettyPrintToJSON)")
+    }
+
 }
