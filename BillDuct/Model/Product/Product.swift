@@ -27,7 +27,7 @@ struct Product: Identifiable, Codable {
             return Image(.placeholder).resizable().scaledToFit().size(.medium)
         }
         return AsyncImage(url: url) { image in
-            image.resizable().scaledToFit().size(.medium).defaultCornerRadius()
+            image.resizable().scaledToFill().size(.medium).defaultCornerRadius().clipped()
         } placeholder: {
             ProgressView()
                 .size(.medium)
